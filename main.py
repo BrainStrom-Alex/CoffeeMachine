@@ -29,3 +29,12 @@ resources = {
     "milk": 200,
     "coffee": 100,
 }
+
+money = 0
+
+def coins_entry():
+    quarters = int(input("how many quarters?: "))
+    dimes = int(input("how many dimes?: "))
+    nickles = int(input("how many nickles?: "))
+    pennies = int(input("how many pennies?: "))
+    return quarters, dimes, nickles, pennies
