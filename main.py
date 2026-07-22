@@ -43,3 +43,12 @@ def coin_calculator(coffee_type, quarters_coin, dimes_coin, nickles_coin, pennie
     total_money = (quarters_coin*0.25) + (dimes_coin*0.1) + (nickles_coin*0.05) + (pennies_coin*0.01)
     money_left = total_money - MENU[coffee_type]["cost"]
     return money_left, total_money
+
+def money_process():
+    print("Please insert coins.")
+    output = coins_entry()
+    money_output = coin_calculator(initial_input, output[0], output[1], output[2], output[3])
+    if money_output[1] > MENU[initial_input]["cost"]:
+        print(f"Here is ${round(money_output[0], 2)} in change.")
+    total_money_input = money_output[1]
+    return total_money_input
