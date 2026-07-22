@@ -52,3 +52,24 @@ def money_process():
         print(f"Here is ${round(money_output[0], 2)} in change.")
     total_money_input = money_output[1]
     return total_money_input
+
+
+def resources_left(coffee_type):
+
+    if coffee_type == "espresso":
+        if resources["water"] >= 50 and resources["coffee"] >= 18:
+            return True
+        else:
+            return False
+
+    elif coffee_type == "latte":
+        if resources["water"] >= 200 and resources["milk"] >= 150 and resources["coffee"] >= 24:
+            return True
+        else:
+            return False
+
+    elif coffee_type == "cappuccino":
+        if resources["water"] >= 250 and resources["milk"] >= 100 and resources["coffee"] >= 24:
+            return True
+        else:
+            return False
