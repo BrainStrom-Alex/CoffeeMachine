@@ -77,3 +77,25 @@ def resources_left(coffee_type):
 restart = True
 while restart:
     initial_input = input("What would you like? (espresso/latte/cappuccino): ")
+
+    if initial_input == "report":
+        print(f"Water: {resources['water']}ml\nMilk: {resources['milk']}ml\nCoffee: {resources['coffee']}g")
+        print(f"Money: ${money}")
+
+    elif initial_input == "espresso":
+        if resources_left(initial_input):
+            output = money_process()
+            if output >= MENU[initial_input]["cost"]:
+                print("Here is your espresso ☕️. Enjoy!")
+                money += MENU[initial_input]["cost"]
+
+                resources["water"] -= 50
+                resources["coffee"] -= 18
+            else:
+                print("Sorry that's not enough money. Money refunded.")
+
+        elif not resources_left(initial_input):
+            if resources["water"] < 50:
+                print("Sorry there is not enough water.")
+            if resources["coffee"] < 18:
+                print("Sorry there is not enough coffee.")
