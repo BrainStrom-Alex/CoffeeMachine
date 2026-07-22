@@ -38,3 +38,8 @@ def coins_entry():
     nickles = int(input("how many nickles?: "))
     pennies = int(input("how many pennies?: "))
     return quarters, dimes, nickles, pennies
+
+def coin_calculator(coffee_type, quarters_coin, dimes_coin, nickles_coin, pennies_coin):
+    total_money = (quarters_coin*0.25) + (dimes_coin*0.1) + (nickles_coin*0.05) + (pennies_coin*0.01)
+    money_left = total_money - MENU[coffee_type]["cost"]
+    return money_left, total_money
