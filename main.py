@@ -123,3 +123,24 @@ while restart:
                     print("Sorry there is not enough milk.")
                 if resources["coffee"] < 24:
                     print("Sorry there is not enough coffee.")
+
+            elif initial_input == "cappuccino":
+                if resources_left(initial_input):
+                    output = money_process()
+                    if output >= MENU[initial_input]["cost"]:
+                        print("Here is your cappuccino ☕️. Enjoy!")
+                        money += MENU[initial_input]["cost"]
+
+                        resources["water"] -= 250
+                        resources["milk"] -= 100
+                        resources["coffee"] -= 24
+                    else:
+                        print("Sorry that's not enough money. Money refunded.")
+
+                elif not resources_left(initial_input):
+                    if resources["water"] < 250:
+                        print("Sorry there is not enough water.")
+                    if resources["milk"] < 100:
+                        print("Sorry there is not enough milk.")
+                    if resources["coffee"] < 24:
+                        print("Sorry there is not enough coffee.")
