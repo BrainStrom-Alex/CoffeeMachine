@@ -73,3 +73,7 @@ def resources_left(coffee_type):
             return True
         else:
             return False
+
+restart = True
+while restart:
+    initial_input = input("What would you like? (espresso/latte/cappuccino): ")
