@@ -144,3 +144,14 @@ while restart:
                         print("Sorry there is not enough milk.")
                     if resources["coffee"] < 24:
                         print("Sorry there is not enough coffee.")
+
+                    else:
+                        if resources["water"] == 0:
+                            restart = False
+                        elif resources["milk"] == 0:
+                            restart = False
+                        elif resources["coffee"] == 0:
+                            restart = False
+
+                elif initial_input == "off":
+                    restart = False
